@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BIG BUTTON SUM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>💡 Add Numbers & Multiply</h1>
+
+    <div class="button-container">
+      <button onclick="addValue(0.5)">0.5</button>
+      <button onclick="addValue(1)">1</button>
+      <button onclick="addValue(1.5)">1.5</button>
+      <button onclick="addValue(2)">2</button>
+      <button onclick="addValue(2.5)">2.5</button>
+      <button onclick="addValue(3)">3</button>
+      <button onclick="addValue(3.5)">3.5</button>
+    </div>
+
+    <div class="total-display">
+      Total: <span id="total">0</span>
+    </div>
+
+    <div class="ok-section">
+      <button class="ok-btn" onclick="calculateFinal()">OK</button>
+    </div>
+
+    <div class="final-result">
+      Final Result (×30): <span id="final">0</span>
+    </div>
+  </div>
+
+  <script>
+    let total = 0;
+
+    function addValue(value) {
+      total += value;
+      document.getElementById('total').textContent = total.toFixed(2);
+    }
+
+    function calculateFinal() {
+      const result = total * 30;
+      document.getElementById('final').textContent = result.toFixed(2);
+    }
+  </script>
+</body>
+</html>
